@@ -9,7 +9,7 @@ import kotlinx.coroutines.Dispatchers
 /**
  *Created by tarikul on 5/9/20
  */
-class MainViewModel(val mainRepository: MainRepository) : ViewModel() {
+class MainViewModel(private val mainRepository: MainRepository) : ViewModel() {
 
     fun getUsers() = liveData(Dispatchers.IO) {
         emit(Resource.loading(data = null))

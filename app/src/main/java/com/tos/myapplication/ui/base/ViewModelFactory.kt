@@ -10,7 +10,7 @@ import java.lang.IllegalArgumentException
 /**
  *Created by tarikul on 5/9/20
  */
-class ViewModelFactory(val apiHelper: ApiHelper) : ViewModelProvider.Factory {
+class ViewModelFactory(private val apiHelper: ApiHelper) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(MainViewModel::class.java)) {
             return MainViewModel(MainRepository(apiHelper)) as T
